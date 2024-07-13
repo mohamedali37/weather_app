@@ -41,6 +41,10 @@ class HomePage extends StatelessWidget {
           );
         } else if (state is WeatherFailureState) {
           return Center(child: Text(state.err.toString()));
+        } else if (state is WeatherLoadingState) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         } else {
           return const NoWeather();
         }
